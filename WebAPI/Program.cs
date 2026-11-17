@@ -5,6 +5,8 @@ using Domain.Models;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Components.Infrastructure;
+using Microsoft.AspNetCore.Hosting.Builder;
+using Microsoft.EntityFrameworkCore;
 using WebAPI.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +15,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<DataBase>();
+builder.Services.AddDbContext<DataBase>(options =>
+options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<IDepartmetServices, DepartmentService>();

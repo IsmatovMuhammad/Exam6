@@ -3,6 +3,8 @@ using Application.Interfaces.Repositories;
 using Dapper;
 using Domain.Models;
 using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 
 namespace Infrastructure.Repositories;
 
@@ -11,72 +13,47 @@ public class LeaveRequestRepository(DataBase dataBase) : ILeaveRequestRepository
     private readonly DataBase data = dataBase;
     public async Task<bool> AddLeaveRequest(LeaveRequest leaveRequest, CancellationToken cancellationToken)
     {
-        await using var conn = data.Connection();
-        await conn.OpenAsync(cancellationToken);
-        var query = @"insert into leaverequests(employeeid, leavetype, startdate, enddate, status, reason, createdat)values
-        (@employeeid, @leavetype, @startdate, @enddate, @status, @reason, @createdat)";
-        var command = new CommandDefinition(
-            query,
-            leaveRequest,
-            cancellationToken: cancellationToken
-        );
-        var res = await conn.ExecuteAsync(command);
+        data.LeaveRequests.Add(leaveRequest);
+        var res = await data.SaveChangesAsync();
         return res > 0;
     }
 
     public async Task<bool> DeleteLeaveRequest(int id, CancellationToken cancellationToken)
     {
-        await using var conn = data.Connection();
-        await conn.OpenAsync(cancellationToken);
-        var query = @"delete from leaverequests where id = @id";
-        var command = new CommandDefinition(
-            query,
-            new{id},
-            cancellationToken: cancellationToken
-        );
-        var res = await conn.ExecuteAsync(command);
+        var leave = await data.LeaveRequests.FirstOrDefaultAsync(x => x.Id == id);
+        if(leave != null)
+        {
+            data.LeaveRequests.Remove(leave);
+        }
+        var res = await data.SaveChangesAsync();
         return res > 0;
     }
 
     public async Task<LeaveRequest> GetRequest(int id, CancellationToken cancellationToken)
     {
-        await using var conn = data.Connection();
-        await conn.OpenAsync(cancellationToken);
-        var query = "select * from leaverequests where id = @id";
-        var command = new CommandDefinition(
-            query,
-            new{id},
-            cancellationToken: cancellationToken
-        );
-        var res = await conn.QuerySingleOrDefaultAsync<LeaveRequest>(command);
-        return res!;
+        var leave = await data.LeaveRequests.FirstOrDefaultAsync(x => x.Id == id);
+        return leave??new();
     }
 
     public async Task<List<LeaveRequest>> GetRequests(CancellationToken cancellationToken)
     {
-        await using var conn = data.Connection();
-        await conn.OpenAsync(cancellationToken);
-        var query = "select * from leaverequests";
-        var command = new CommandDefinition(
-            query,
-            cancellationToken: cancellationToken
-        );
-        var res = await conn.QueryAsync<LeaveRequest>(command);
-        return res.ToList();
+        return await data.LeaveRequests.ToListAsync();
     }
 
     public async Task<bool> UpdateLeaveRequest(LeaveRequest leaveRequest, CancellationToken cancellationToken)
     {
-        await using var conn = data.Connection();
-        await conn.OpenAsync(cancellationToken);
-        var query = @"update leaverequests set employeeid = @employeeid, leavetype = @leavetype, startdate = @startdate, 
-        enddate = @enddate,  = @status, reason = @reason, createdat = @createdat where id = @id";
-        var command = new CommandDefinition(
-            query,
-            leaveRequest,
-            cancellationToken: cancellationToken
-        );
-        var res = await conn.ExecuteAsync(command);
+        var leave = await data.LeaveRequests.FirstOrDefaultAsync(x => x.Id == leaveRequest.Id);
+        if(leave != null)
+        {
+            leave.EmployeeId = leaveRequest.EmployeeId;
+            leave.LeaveType = leaveRequest.LeaveType;
+            leave.StartDate = leaveRequest.StartDate;
+            leave.EndDate = leaveRequest.EndDate;
+            leave.Status = leaveRequest.Status;
+            leave.Reason = leaveRequest.Reason;
+            leave.CreatedAt = leaveRequest.CreatedAt;
+        }
+        var res = await data.SaveChangesAsync();
         return res > 0;
     }
 

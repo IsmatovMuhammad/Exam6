@@ -1,10 +1,14 @@
 using System.Data.Common;
+using Domain.Models;
+using Microsoft.EntityFrameworkCore;
 using Npgsql;
 
 namespace Infrastructure.Data;
 
-public class DataBase
+public class DataBase(DbContextOptions<DataBase> options) : DbContext(options)
 {
-    private string connection = "Host=localhost;Port=5432;DataBase=EmployeeManagementDB;Username=postgres;Password=1234";
-    public DbConnection Connection() => new NpgsqlConnection(connection);
+    public DbSet<Department> Departments { get; set; }
+    public DbSet<Employee> Employees { get; set; }
+    public DbSet<LeaveRequest> LeaveRequests { get; set; }
+    public DbSet<Position> Positions { get; set; }
 }
