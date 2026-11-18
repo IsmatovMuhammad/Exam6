@@ -12,4 +12,7 @@ public class Employee
     public bool IsActive { get; set; }
     public int DepartmentId { get; set; }
     public int PositionId { get; set; }
+
+    public Department? Department { get; set; }
+    public Position? Position { get; set; }
 }

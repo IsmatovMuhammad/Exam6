@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\Domain.csproj": {}
+    "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\Domain.csproj": {
+    "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Мухаммад\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Мухаммад\\AppData\\Roaming\\NuGet\\NuGet.Config",

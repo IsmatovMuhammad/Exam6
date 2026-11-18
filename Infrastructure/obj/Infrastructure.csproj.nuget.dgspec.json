@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Infrastructure\\Infrastructure.csproj": {}
+    "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Application\\Application.csproj": {
+    "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Мухаммад\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Application\\obj\\",
+        "outputPath": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Мухаммад\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\Domain.csproj"
+              "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\Domain.csproj"
               }
             }
           }
@@ -345,14 +345,14 @@
         }
       }
     },
-    "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\Domain.csproj": {
+    "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Мухаммад\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Мухаммад\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -682,14 +682,14 @@
         }
       }
     },
-    "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Мухаммад\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Мухаммад\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -707,11 +707,11 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Application\\Application.csproj"
+              "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Application\\Application.csproj"
               },
-              "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Exam6\\Domain\\Domain.csproj"
+              "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Мухаммад\\Desktop\\Employee-Managment\\Domain\\Domain.csproj"
               }
             }
           }
@@ -736,6 +736,16 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.1.89, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.4, )"
             },
             "Npgsql": {
               "target": "Package",

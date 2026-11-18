@@ -12,4 +12,6 @@ public class LeaveRequest
     public StatusType Status { get; set; }
     public string Reason { get; set; } = null!;
     public DateTime CreatedAt { get; set; }
+
+    public Employee? Employee { get; set; }
 }
